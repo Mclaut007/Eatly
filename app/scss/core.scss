@@ -1,0 +1,281 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	line-height: 1;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body._lock {
+	overflow: hidden;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+svg {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
+// В font-size можно записать самый частый размер шрифта на сайте, в font-family - самый частое семейство шрифта.
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-size: rem(18);
+	font-weight: 600;
+	// color: $mainColor;
+	background-color: #f9f9f9;
+	// overflow-wrap: break-word;
+	// word-wrap: break-word;
+}
+
+/*--------- visually-hidden ---------*/
+
+// Класс, который можно использовать для элементов, которые  нужно скрыть, но так, чтобы скринридеры их видели. Например, заголовок, который должен по логике быть, но по дизайн-макету его нет. Или контент для табов((?) Анимировать это дело получится, разве?(А нужно ли анимировать?)). Когда display: none; не подходит. При display: none; ни поисковики, ни скринридеды, вроде как, не видят скрытый элемент. Атрибут hidden может заменить display: none;
+// Если нужно сделать плавное появление и исчезновение выпадающего меню (например), видимо, придется использовать, к примеру, visibility и opacity (hidden и 0). Но при этом нужно, чтобы элемент был спозиционирован абсолютно, к примеру (?). Иначе он будет продолжать занимать место в разметке.
+// ??? (по скрытым ссылкам же будет при табе происходить фокусировка, что будет не видно) Можно попробовать opacity и pointer-events: none. Без visibility: hidden; В этом случае скрытый элемент будут видеть и поисковики, и скринридеры. При visibility: hidden; скринридеры видеть элемент, вроде, не будут.
+// Исчезновение блока можно сделать с помощью спойлера (за счет height: 0;). В этом случае исчезновение/появление анимируется. И скрытый элемент будут видеть и поисковики, и скринридеры.
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+/*------------------*/
+
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+/*------------------*/
+
+[class$="__container"] {
+	max-width: $maxWidth;
+	min-width: $minWidth;
+	padding: 0 rem(15);
+	margin: 0 auto;
+}
+
+@media (max-width: $mobile) {
+	[class$="__container"] {
+		padding: 0 rem(30);
+	}
+}
+
+@media (max-width: $mobileSmall) {
+	[class$="__container"] {
+		padding: 0 rem(20);
+	}
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.heading1 {
+	color: #201f1f;
+	// font-size: rem(75);
+	// font-size: clamp(
+	// 	rem(53),
+	// 	calc(rem(53) + ((75 - 53) / 16) * ((100vw - $tablet) / ($maxWidthRemWithout - $tabletRemWithout))),
+	// 	rem(75)
+	// );
+	font-size: proadrem(53, 75, $tabletRemWithout, $maxWidthRemWithout);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: rem(-3);
+	text-transform: capitalize;
+}
+
+.heading2 {
+	color: #18181b;
+	// font-size: rem(51);
+	font-size: proadrem(36, 51, $tabletRemWithout, $maxWidthRemWithout);
+	font-weight: 700;
+	line-height: 1.14;
+	text-transform: capitalize;
+	@media (max-width: $tablet) {
+		font-size: proadrem(30, 36, $mobileSmallRemWithout, $tabletRemWithout);
+	}
+}
+
+.heading3 {
+	color: #323142;
+	// font-size: rem(45);
+	font-size: proadrem(32, 45, $tabletRemWithout, $maxWidthRemWithout);
+	font-weight: 600;
+	@media (max-width: $mobile) {
+		font-size: rem(30);
+	}
+}
+
+.button {
+	color: #f9f9f9;
+	font-family: Inter;
+	// font-size: rem(18);
+	font-size: proadrem(13, 18, $tabletRemWithout, $maxWidthRemWithout);
+	font-weight: 500;
+	line-height: 1.5;
+	// padding: rem(16) rem(25);
+	padding: proadrem(13, 16, $tabletRemWithout, $maxWidthRemWithout)
+		proadrem(20, 25, $tabletRemWithout, $maxWidthRemWithout);
+	text-transform: capitalize;
+	// border-radius: rem(16);
+	border-radius: proadrem(11, 16, $tabletRemWithout, $maxWidthRemWithout);
+	transition: all 0.3s ease 0s;
+	// @media (max-width: $tablet) {
+	// 	padding: rem(13) rem(20);
+	// 	font-size: rem(13);
+	// }
+
+	// .button_violet
+
+	&_violet {
+		background-color: var(--violet-color);
+		border: 2px solid #6c5fbc;
+		@media (any-hover: hover) and (pointer: fine) {
+			&:hover {
+				color: var(--violet-color);
+				background-color: #f9f9f9;
+			}
+		}
+	}
+	&_white {
+		color: var(--violet-color);
+		background-color: #f9f9f9;
+		border: 1.5px solid #6c5fbc;
+		@media (any-hover: hover) and (pointer: fine) {
+			&:hover {
+				color: #f9f9f9;
+				background-color: var(--violet-color);
+			}
+		}
+	}
+}
+
+._violet {
+	color: #6c5fbc;
+}
+
+.view-all {
+	display: block;
+	width: fit-content;
+	color: #acadb9;
+	// font-size: rem(20);
+	font-size: proadrem(14, 20, $tabletRemWithout, $maxWidthRemWithout);
+	font-weight: 500;
+	line-height: 225.921%;
+	letter-spacing: -0.1px;
+	padding-right: proadrem(35, 48, $tabletRemWithout, $maxWidthRemWithout);
+	position: relative;
+	@media (max-width: $tablet) {
+		font-size: rem(20);
+		padding-right: rem(42);
+	}
+	@media (any-hover: hover) and (pointer: fine) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&::after {
+		content: "";
+		// width: rem(19);
+		width: proadrem(13, 19, $tabletRemWithout, $maxWidthRemWithout);
+		// height: rem(19);
+		height: proadrem(13, 19, $tabletRemWithout, $maxWidthRemWithout);
+		background: url(./../images/restaurants/arrow-view-all.svg) no-repeat;
+		background-size: contain;
+		position: absolute;
+		top: 50%;
+		// right: rem(12);
+		right: proadrem(10, 12, $tabletRemWithout, $maxWidthRemWithout);
+		transform: translateY(calc(-50% + rem(-2)));
+		@media (max-width: $tablet) {
+			width: rem(18);
+			height: rem(18);
+			right: rem(6);
+		}
+	}
+}
+
+._hidden {
+	display: none;
+}

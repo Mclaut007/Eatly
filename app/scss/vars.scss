@@ -1,0 +1,69 @@
+// Возможно, лучше использовать css-переменные, а не scss. Тогда, к примеру, в будущем можно очень легко на всем сайте поменять цвет, который применяется во множестве мест. Пример использования:
+// :root {
+// 	--main-color: #564c4c;
+// }
+// .block {
+// color: var(--main-color);
+// }
+
+:root {
+	--violet-color: #6c5fbc;
+}
+
+// $mainColor - поменять на самый частый цвет в макете
+
+// $mainColor: #000;
+
+//--------------------------//
+
+// $maxWidth - размер max-width для __container. Поменять на тот, что по макету
+
+// $maxWidth: 1280px;
+
+$maxWidthPx: 1280; // Это ширина в пикселях, но пишем без пикселей, чтобы пересчитать в ремы
+$minWidthPx: 320;
+
+// Если хотим maxWidth и minWidth в ремах, то пишем следующее:
+$maxWidth: calc($maxWidthPx / 16 * 1rem);
+$minWidth: calc($minWidthPx / 16 * 1rem);
+
+// maxWidth и minWidth в ремах, но без единиц измерения (используется в формуле для адаптивных свойств):
+
+$maxWidthRemWithout: calc($maxWidthPx / 16);
+$minWidthRemWithout: calc($minWidthPx / 16);
+// То есть будет, к примеру, не 2.25rem, а 2.25
+
+//--------------------------//
+
+// $deskMiddle: 1399.98px;
+// $desk: 1199.98px;
+// $tablet: 991.98px;
+// $mobile: 767.98px;
+// $mobileMiddle: 575.98px;
+// $mobileSmall: 478.98px;
+
+$deskMiddle: calc(1399.98 / 16 * 1rem);
+// $deskMiddle: calc(1279.98 / 16 * 1rem);
+
+// $desk: calc(1199.98 / 16 * 1rem);
+$desk: calc(1099.98 / 16 * 1rem);
+$deskRemWithout: calc(1099.98 / 16);
+
+// $tablet: calc(991.98 / 16 * 1rem);
+$tabletPx: 919.98;
+$tabletRemWithout: calc(919.98 / 16);
+$tablet: calc(919.98 / 16 * 1rem);
+
+$mobile: calc(767.98 / 16 * 1rem);
+$mobileRemWithout: calc(767.98 / 16);
+
+$mobileMiddle: calc(575.98 / 16 * 1rem);
+$mobileMiddleRemWithout: calc(575.98 / 16);
+
+// $mobileSmall: calc(478.98 / 16 * 1rem);
+// $mobileSmallRemWithout: calc(478.98 / 16);
+
+$mobileSmall: calc(374.98 / 16 * 1rem);
+$mobileSmallRemWithout: calc(374.98 / 16);
+
+

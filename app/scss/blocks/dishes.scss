@@ -1,0 +1,304 @@
+.dishes {
+	// .dishes__container
+
+	&__container {
+		// padding-top: rem(100);
+		padding-top: proadrem(71, 100, $tabletRemWithout, $maxWidthRemWithout);
+		// padding-bottom: rem(120);
+		padding-bottom: proadrem(85, 120, $tabletRemWithout, $maxWidthRemWithout);
+		border-bottom: 1px solid #cbcbcb;
+		@media (max-width: $mobileMiddle) {
+			padding-top: rem(85);
+			padding-bottom: rem(66);
+		}
+	}
+
+	// .dishes__heading
+
+	&__heading {
+		text-align: center;
+		&:not(:last-child) {
+			// margin-bottom: rem(76);
+			margin-bottom: proadrem(53, 76, $tabletRemWithout, $maxWidthRemWithout);
+			@media (max-width: $mobileMiddle) {
+				margin-bottom: rem(61);
+			}
+		}
+	}
+
+	// .dishes__items
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		// gap: rem(31);
+		gap: proadrem(22, 31, $tabletRemWithout, $maxWidthRemWithout);
+		align-items: start;
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(3, 1fr);
+			row-gap: rem(30);
+		}
+		@media (max-width: $mobileMiddle) {
+			grid-template-columns: repeat(2, 1fr);
+			row-gap: rem(42);
+		}
+		@media (max-width: $mobileSmall) {
+			row-gap: rem(32);
+		}
+	}
+
+	// .dishes__item
+
+	&__item {
+	}
+
+	// .dishes__view-all
+
+	&__view-all {
+		margin-left: auto;
+		// padding-right: rem(48);
+		&:not(:first-child) {
+			// margin-top: rem(66);
+			margin-top: proadrem(47, 66, $tabletRemWithout, $maxWidthRemWithout);
+			@media (max-width: $tablet) {
+				margin-top: rem(61);
+			}
+		}
+	}
+}
+.heading3 {
+}
+
+// ._bold
+
+._smaller {
+	color: #8e97a6;
+	// font-size: rem(19);
+	font-size: proadrem(13, 19, $tabletRemWithout, $maxWidthRemWithout);
+	@media (max-width: $mobileSmall) {
+		font-size: rem(12);
+	}
+}
+
+.dishes-item {
+	// border-radius: rem(35);
+	border-radius: proadrem(24, 35, $tabletRemWithout, $maxWidthRemWithout);
+	border: 1px solid #f4f4f6;
+	background: #fff;
+	box-shadow: rem(7) rem(82) rem(41) 0 rgba(229, 229, 229, 0.7);
+	padding-top: rem(26);
+	padding-bottom: rem(22);
+	position: relative;
+	@media (max-width: $tablet) {
+		padding-top: proadrem(17, 26, $tabletRemWithout, $maxWidthRemWithout);
+	}
+
+	// .dishes-item__favorite
+
+	&__favorite {
+		// width: rem(22);
+		width: proadrem(15, 22, $tabletRemWithout, $maxWidthRemWithout);
+		height: auto;
+		position: absolute;
+		z-index: 1;
+		// top: rem(24);
+		top: proadrem(17, 13, $tabletRemWithout, $maxWidthRemWithout);
+		// right: rem(22);
+		right: proadrem(15, 22, $tabletRemWithout, $maxWidthRemWithout);
+		cursor: pointer;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) and (pointer: fine) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	// .dishes-item__img-wrapper
+
+	&__img-wrapper {
+		// margin-left: rem(15);
+		margin-left: proadrem(11, 15, $tabletRemWithout, $maxWidthRemWithout);
+		// margin-right: rem(25);
+		margin-right: proadrem(18, 25, $tabletRemWithout, $maxWidthRemWithout);
+		@media (max-width: $mobileSmall) {
+			margin-left: rem(10);
+			margin-right: rem(16);
+		}
+	}
+
+	// .dishes-item__img-wrap
+
+	&__img-wrap {
+		position: relative;
+		padding-top: 100%;
+	}
+
+	// .dishes-item__img
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	// .dishes-item__info
+
+	&__info {
+		padding: rem(3) proadrem(16, 23, $tabletRemWithout, $maxWidthRemWithout) 0;
+	}
+
+	// .dishes-item__subtitle
+
+	&__subtitle {
+		color: #daa31a;
+		// font-size: rem(11);
+		font-size: proadrem(8, 11, $tabletRemWithout, $maxWidthRemWithout);
+		font-weight: 400;
+		line-height: normal;
+		padding: rem(3) rem(8);
+		padding: proadrem(2, 3, $tabletRemWithout, $maxWidthRemWithout)
+			proadrem(6, 8, $tabletRemWithout, $maxWidthRemWithout);
+		// border-radius: rem(5);
+		border-radius: proadrem(3, 5, $tabletRemWithout, $maxWidthRemWithout);
+		background: #f7edd0;
+		width: fit-content;
+		&_red {
+			color: #fb471d;
+			background: rgba(247, 197, 186, 1);
+		}
+		&_green {
+			color: #309d5b;
+			background: rgba(51, 172, 100, 0.2);
+		}
+		&:not(:first-child) {
+			margin-top: rem(2);
+		}
+	}
+
+	// .dishes-item__title
+
+	&__title {
+		color: #323142;
+		// font-size: rem(23);
+		font-size: proadrem(16, 23, $tabletRemWithout, $maxWidthRemWithout);
+		font-style: normal;
+		// font-weight: 600;
+		line-height: 162.5%;
+		&:not(:last-child) {
+			margin-bottom: rem(2);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(15);
+		}
+	}
+
+	// .dishes-item__extra-info
+
+	&__extra-info {
+		display: flex;
+		// gap: rem(10);
+		gap: proadrem(7, 10, $tabletRemWithout, $maxWidthRemWithout);
+		color: #8e97a6;
+		font-family: Manrope;
+		// font-size: rem(17);
+		font-size: proadrem(12, 17, $tabletRemWithout, $maxWidthRemWithout);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.33;
+		&:not(:last-child) {
+			// margin-bottom: rem(11);
+			margin-bottom: proadrem(8, 11, $tabletRemWithout, $maxWidthRemWithout);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(11);
+		}
+	}
+
+	// .dishes-item__time
+
+	&__time {
+	}
+
+	// .dishes-item__rate
+
+	&__rate {
+		display: flex;
+		// gap: rem(9);
+		gap: proadrem(6, 9, $tabletRemWithout, $maxWidthRemWithout);
+		align-items: center;
+	}
+
+	// .dishes-item__star
+
+	&__star {
+		width: rem(15);
+		height: auto;
+		margin-top: rem(-1);
+		@media (max-width: $tablet) {
+			width: proadrem(10, 15, $mobileSmallRemWithout, $tabletRemWithout);
+		}
+	}
+
+	// .dishes-item__rate-number
+
+	&__rate-number {
+	}
+
+	// .dishes-item__buy-dish
+
+	&__buy-dish {
+		display: flex;
+		gap: rem(15);
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	// .dishes-item__price
+
+	&__price {
+		color: #323142;
+		font-family: Manrope;
+		// font-size: rem(26);
+		font-size: proadrem(18, 26, $tabletRemWithout, $maxWidthRemWithout);
+		font-style: normal;
+		font-weight: 700;
+		line-height: 156%;
+		@media (max-width: $tablet) {
+			font-size: rem(17);
+		}
+	}
+
+	// .dishes-item__add-dish
+
+	&__add-dish {
+		// background: rgba(50, 49, 66, 1);
+		border-radius: rem(9);
+	}
+
+	// .dishes-item__plus-img
+
+	&__add-img {
+		transition: all 0.3s ease 0s;
+		width: proadrem(31, 45, $tabletRemWithout, $maxWidthRemWithout);
+		height: auto;
+		@media (any-hover: hover) and (pointer: fine) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		@media (max-width: $tablet) {
+			width: proadrem(29, 31, $tabletRemWithout, $maxWidthRemWithout);
+		}
+	}
+}
+
+.view-all {
+}
+

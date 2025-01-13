@@ -1,0 +1,153 @@
+.subscribe {
+	// .subscribe__container
+
+	&__container {
+		// padding-bottom: rem(216);
+		padding-bottom: proadrem(154, 216, $tabletRemWithout, $maxWidthRemWithout);
+		@media (max-width: $mobile) {
+			padding-bottom: rem(198);
+		}
+	}
+
+	// .subscribe__block {
+	&__block {
+		background:
+			url(./../images/subscribe/background-decors.png) no-repeat,
+			rgba(108, 95, 188, 1);
+		background-size: cover;
+		// padding: rem(37) rem(66) rem(61);
+		padding: proadrem(26, 37, $tabletRemWithout, $maxWidthRemWithout)
+			proadrem(46, 66, $tabletRemWithout, $maxWidthRemWithout) proadrem(43, 61, $tabletRemWithout, $maxWidthRemWithout);
+		position: relative;
+		// border-radius: rem(30);
+		border-radius: proadrem(21, 30, $tabletRemWithout, $maxWidthRemWithout);
+		@media (max-width: $tablet) {
+			border-radius: proadrem(15, 21, $mobileSmallRemWithout, $tabletRemWithout);
+		}
+		@media (max-width: $mobile) {
+			padding: rem(36) rem(27) rem(95);
+		}
+	}
+
+	// .subscribe__text
+
+	&__text {
+		color: #fff;
+		// font-size: rem(70);
+		font-size: proadrem(50, 70, $tabletRemWithout, $maxWidthRemWithout);
+		@media (max-width: $tablet) {
+			font-size: proadrem(41, 50, $mobileSmallRemWithout, $tabletRemWithout);
+		}
+		font-weight: 800;
+		line-height: normal;
+		opacity: 0.8;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		&:not(:last-child) {
+			// margin-bottom: rem(9);
+			margin-bottom: proadrem(6, 9, $tabletRemWithout, $maxWidthRemWithout);
+		}
+		@media (max-width: $mobile) {
+			text-align: center;
+			&:not(:last-child) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+
+	// .subscribe__form
+
+	&__form {
+		border-radius: rem(14);
+		background: rgba(255, 255, 255, 0.8);
+		box-shadow: 0 rem(7) rem(45) 0 rgba(0, 0, 0, 0.1);
+		// width: rem(440);
+		width: proadrem(313, 440, $tabletRemWithout, $maxWidthRemWithout);
+		overflow: hidden;
+		display: flex;
+		gap: rem(6);
+		// padding: rem(7) rem(6);
+		padding: proadrem(5, 7, $tabletRemWithout, $maxWidthRemWithout)
+			proadrem(5, 6, $tabletRemWithout, $maxWidthRemWithout);
+		@media (max-width: $mobile) {
+			width: 100%;
+			// max-width: 100%;
+		}
+	}
+
+	// .subscribe__input
+
+	&__input {
+		background-color: transparent;
+		color: #878787;
+		width: 100%;
+		// font-size: rem(16);
+		font-size: proadrem(12, 16, $tabletRemWithout, $maxWidthRemWithout);
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: rem(0.488);
+		text-transform: capitalize;
+		flex-grow: 1;
+		border-radius: rem(11);
+		// padding-left: rem(15);
+		padding-left: proadrem(10, 15, $tabletRemWithout, $maxWidthRemWithout);
+		@media (max-width: $tablet) {
+			letter-spacing: rem(0.347);
+		}
+	}
+
+	// .subscribe__button
+
+	&__button {
+		color: rgba(247, 248, 250, 0.8);
+		font-family: Poppins;
+		// font-size: rem(15);
+		font-size: proadrem(10, 15, $tabletRemWithout, $maxWidthRemWithout);
+		line-height: normal;
+		letter-spacing: rem(0.443);
+		text-transform: uppercase;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 11.253px;
+		background: #6c5fbc;
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		padding: proadrem(11, 15, $tabletRemWithout, $maxWidthRemWithout)
+			proadrem(18, 25, $tabletRemWithout, $maxWidthRemWithout);
+		@media (max-width: $tablet) {
+			letter-spacing: rem(0.315);
+		}
+	}
+
+	// .subscribe__wrapper-img
+
+	&__wrapper-img {
+		position: absolute;
+		// width: rem(274);
+		width: proadrem(195, 274, $tabletRemWithout, $maxWidthRemWithout);
+		// height: rem(276);
+		height: proadrem(196, 276, $tabletRemWithout, $maxWidthRemWithout);
+		// right: rem(72);
+		right: proadrem(51, 72, $tabletRemWithout, $maxWidthRemWithout);
+		// top: rem(64);
+		top: proadrem(46, 64, $tabletRemWithout, $maxWidthRemWithout);
+		// 170 171
+		@media (max-width: $tablet) {
+			width: proadrem(170, 195, $mobileSmallRemWithout, $tabletRemWithout);
+			height: proadrem(171, 196, $mobileSmallRemWithout, $tabletRemWithout);
+		}
+		@media (max-width: $mobile) {
+			left: 50%;
+			transform: translateX(-50%);
+			top: rem(189);
+		}
+	}
+
+	// .subscribe__img
+
+	&__img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		object-fit: contain;
+	}
+}
